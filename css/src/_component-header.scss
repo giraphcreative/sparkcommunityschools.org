@@ -1,0 +1,79 @@
+
+
+.page-header {
+    position: relative;
+    background: center center / cover no-repeat;
+    height: 350px;
+
+    @include respond-to( $bp-m ) {
+        height: auto;
+    }
+
+    img {
+        position: relative;
+        visibility: hidden;
+        z-index: 0;
+        display: block;
+
+        @include respond-to( $bp-m ) {
+            visibility: visible;
+        }
+    }
+
+    .page-header-content {
+        position: absolute;
+        z-index: 100;
+        bottom: 60px;
+        right: 20%;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        background: $navy;
+        color: white;
+        @include padding-side( 20px, 20px );
+        
+        @include respond-to( $bp-l ) {
+            right: 50%;
+            bottom: 60px;
+            @include padding-side( 30px, 30px );
+        }
+
+        .page-header-content-inner {
+            flex: 1;
+        }
+
+        * {
+            color: white;
+        }
+
+        h1, h2, h3 {
+            @include font;
+            font-size: 2.2em;
+            line-height: 1.1em;
+            text-transform: uppercase;
+            text-shadow: 0 15px 15px rgba( black, .4 );
+
+            @include respond-to( $bp-m ) {
+                font-size: 2.4em;
+            }
+
+            @include respond-to( $bp-xl ) {
+                font-size: 2.8em;
+            }
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.2em;
+            text-shadow: 0 15px 15px rgba( black, .4 );
+
+            @include respond-to( $bp-l ) {
+                font-size: 1.3em;
+                line-height: 1.3em;
+            }
+        }
+    }
+}
+

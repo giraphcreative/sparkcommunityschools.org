@@ -1,0 +1,85 @@
+
+
+.photos-container {
+    @include bg-burst;
+
+    .photos-introduction {
+        @include padding-side( 30px, 15px );
+        @include respond-to( $bp-m ) { @include padding-side( 40px, 15px ); }
+        @include respond-to( $bp-xl ) { @include padding-side( 50px, 30px ); }
+    } 
+
+    .photos {
+        @include padding-side( 15px, 25px );
+
+        @include respond-to( $bp-s ) {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -2%;
+            @include padding-side( 25px, 55px );
+        }
+
+        @include respond-to( $bp-m ) {
+            position: relative;
+            margin: 0 -3%;
+
+            &:before {
+                content: '';
+                background: $sky;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 10%;
+                height: 40%;
+                z-index: 0;
+            }
+        }
+
+        .photo {
+            padding: 20px 0;
+
+            @include respond-to( $bp-s ) {
+                flex: 0 0 46%;
+                margin: 2% 2%;
+                padding: 0;
+            }
+
+            @include respond-to( $bp-m ) {
+                flex-basis: 27%;
+                margin: 0 3%;
+                position: relative;
+                z-index: 1;
+            }
+
+            .image-container {
+                background: white;
+                padding: 8%;
+                box-shadow: 0 0 30px rgba( black, .2 );
+                transform: rotate( -7deg );
+
+                h4 {
+                    @include font-script;
+                    font-size: 1.6em;
+                    text-align: center;
+                    margin-top: 10px;
+
+                    @include respond-to( $bp-xxl ) {
+                        font-size: 2.2em;
+                        line-height: 1.3em;
+                    }
+                }
+            }
+            &:nth-child(2) .image-container { transform: rotate( 5deg ); }
+            &:nth-child(3) .image-container { transform: rotate( -3deg ); }
+
+            .image-content {
+                padding: 30px 0 0
+            }
+
+            .btn {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+

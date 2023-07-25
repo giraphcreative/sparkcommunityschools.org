@@ -1,0 +1,15 @@
+
+
+.content-area {
+    @include padding;
+    @extend .content-style;
+
+    &.grey {
+        background: $grey-light;
+    }
+
+    &.burst {
+        @include bg-burst;
+    }
+}
+

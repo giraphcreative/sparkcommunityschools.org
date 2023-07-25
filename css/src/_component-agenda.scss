@@ -1,0 +1,42 @@
+
+
+.agenda {
+    @include padding;
+    background: $grey-light;
+
+    .item {
+        display: flex;
+        padding: 0 0 10px;
+
+        @include respond-to( $bp-m ) {
+            padding: 0;
+        }
+
+        .time {
+            flex: 0 0 40%;
+            padding-right: 20px;
+            padding: 10px 0;
+
+            @include respond-to( $bp-m ) {
+                flex: 0 0 25%
+            }
+        }
+
+        .content {
+            flex: 0 0 60%;
+
+            strong {
+                color: $orange;
+            }
+
+            em {
+                font-style: italic;
+            }
+
+            @include respond-to( $bp-m ) {
+                flex: 0 0 75%;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,41 @@
+
+
+.article-cards {
+    @include respond-to( $bp-s ) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -3%;
+    }
+
+    .entry {
+        padding-bottom: 30px;
+
+        @include respond-to( $bp-s ) {
+            flex: 1;
+            flex-basis: 50%;
+            flex-grow: 0;
+            padding-right: 3%;
+        }
+
+        @include respond-to( $bp-m ) {
+            flex: 1;
+            flex-basis: 33.3333%;
+            flex-grow: 0;
+            padding-right: 3%;
+        }
+
+        img {
+            margin-bottom: 20px;
+        }
+
+        h4 a {
+            color: $navy;
+        }
+
+        .post-date {
+            padding: 0;
+            opacity: .7;
+        }
+    }
+}
+

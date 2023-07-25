@@ -1,0 +1,59 @@
+
+
+.accordions {
+    @include padding;
+
+    .accordions-intro {
+        @extend .content-style;
+        padding-bottom: 20px;
+    }
+
+    .accordions-inner {
+        margin-top: 20px;
+        border-bottom: 1px solid rgba( $navy, .2 );
+
+        .accordion {
+
+            &:first-child .accordion-title {
+                border-top: 1px solid rgba( $navy, .2 );
+            }
+
+            .accordion-title {
+                @include font-bold;
+                position: relative;
+                padding: 25px 25px 25px 0;
+                color: $navy;
+                font-size: 1.2em;
+                border-top: 1px solid $navy;
+                text-transform: uppercase;
+                letter-spacing: .5px;
+                cursor: pointer;
+
+                &:before {
+                    position: absolute;
+                    right: 0;
+                    font-size: 1.2em;
+                    content: '+';
+                }
+            }
+
+            .accordion-content {
+                padding: 0 10px 30px 0;
+                display: none;
+            }
+
+            &.open {
+                .accordion-title {
+                    &:before {
+                        content: '-';
+                    }
+                }
+
+                .accordion-content {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+

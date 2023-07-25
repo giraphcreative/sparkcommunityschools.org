@@ -1,0 +1,160 @@
+
+
+.image-text {
+    @include padding;
+    position: relative;
+    background: url(../img/bg-burst-mini.png) top right no-repeat;
+
+    .image-text-image {
+        position: relative;
+        border-radius: 50%;
+        border: 15px solid;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .image-text-content {
+        margin-top: -30px;
+        position: relative;
+        z-index: 0;
+        background: $navy;
+        color: white;
+        font-size: 1.3em;
+        @include padding-side( 35px, 45px );
+
+        a {
+            color: rgba( white, .8 );
+            border-bottom: 2px dotted rgba( white, .5 );
+            transition: all 400ms ease-in-out;
+
+            &.btn {
+                border-bottom: none;
+                &:hover { border-bottom: none; }
+            }
+
+            &:hover {
+                text-decoration: none;
+                color: white;
+                border-bottom: 2px dotted rgba( white, 1 );
+            }
+        }
+
+        .btn {
+            margin: 15px 0;
+        }
+    }
+
+    &.seafoam {
+        background-color: $seafoam;
+        
+        .image-text-image {
+            border-color: $sky;
+        }
+    }
+
+    &.red {
+        background-color: $red;
+        
+        .image-text-image {
+            border-color: $sky;
+        }
+    }
+
+    &.orange {
+        background-color: $orange;
+        
+        .image-text-image {
+            border-color: $sky;
+        }
+    }
+
+    &.gold {
+        background-color: $gold;
+        
+        .image-text-image {
+            border-color: $sky;
+        }
+    }
+
+    &.sky {
+        background-color: $sky;
+        
+        .image-text-image {
+            border-color: $orange;
+        }
+    }
+    
+    @include respond-to( $bp-m ) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .image-text-image {
+            flex: 1;
+            flex-basis: 31%;
+            margin-right: 4%;
+        }
+
+        .image-text-content {
+            flex: 1;
+            flex-basis: 65%;
+            margin-top: 0;
+            min-height: 200px;
+        }
+
+        &.right {
+            flex-direction: row-reverse;
+
+            .image-text-content {
+                margin-right: -100px;
+                padding-right: 80px;
+                margin-left: -30px;
+            }
+
+            .image-text-image {
+                margin-right: 0;
+                margin-left: 4%;
+            }
+        }
+    }
+
+    @include respond-to( $bp-l ) {
+        &.right {
+            .image-text-content {
+                margin-left: -50px;
+            }
+        }
+    }
+
+    @include respond-to( $bp-xl ) {
+        &.right {
+            .image-text-content {
+                margin-left: -70px;
+            }
+        }
+
+        .image-text-image {
+            flex-basis: 25%;
+        }
+
+        .image-text-content {
+            flex-basis: 75%
+        }
+    }
+
+    @include respond-to( $bp-xxl ) {
+        
+        &.right {
+            .image-text-content {
+                margin-left: -80px;
+                margin-right: -150px;
+                padding-right: 110px;
+            }
+        }
+
+        .image-text-content {
+            min-height: 250px;
+        }
+    }
+}
+

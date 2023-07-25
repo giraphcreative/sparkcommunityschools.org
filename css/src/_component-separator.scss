@@ -1,0 +1,12 @@
+
+
+.separator {
+    height: 10px;
+    background: url(../img/bg-separator.png) right center / cover no-repeat;
+
+    @include respond-to( $bp-m ) {
+        height: 20px;
+    }
+}
+
+

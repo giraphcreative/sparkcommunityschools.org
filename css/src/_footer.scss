@@ -1,0 +1,129 @@
+
+
+footer {
+	@include clearfix;
+	@include padding-side( 30px, 100px);
+	position: relative;
+	background: white;
+	color: $navy;
+	line-height: 1.5em;
+	padding-bottom: 80px;
+
+	&:after {
+		position: absolute;
+		content: '';
+		background: $seafoam;
+		bottom: -50px;
+		height: 120px;
+		left: -10%;
+		width: 120%;
+		transform: rotate( -1deg );
+	}
+
+	.footer-logo {
+		img {
+			max-width: 220px;
+			padding-bottom: 20px;
+		}
+	}
+
+	.footer-menu {
+		padding: 10px 0;
+
+		a {
+			font-size: 1em;
+			line-height: 1.6em;
+		}
+	}
+	
+	.social-icons {
+		@include respond-to( 768px ) {
+			padding: 10px 0 0;
+		}
+
+		a {
+
+			.social-icon {
+				max-width: 30px;
+				margin-right: 8px;
+
+			}
+
+			.social-icon-svg {
+				fill: #aaa;
+				transition: fill 400ms ease-in-out;
+			}
+
+			&:hover .social-icon-svg {
+				fill:  $orange;
+			}
+		}
+	}
+
+	.footer-columns {
+		.footer-content .copyright {
+			display: none;
+		}
+
+		@include respond-to( $bp-m ) {
+			display: flex;
+
+			.footer-logo {
+				flex: 1;
+				flex-basis: 20%;
+				padding: 20px 3% 0 0;
+				display: flex;
+				align-items: center;
+				vertical-align: middle;
+
+				a {
+					width: 100%;
+				}
+			}
+			
+			.footer-content {
+				border-right: 2px solid rgba( white, .4 );
+				border-left: 2px solid rgba( white, .4 );
+				flex: 1;
+				flex-basis: 50%;
+				padding: 20px 3% 0;
+				border-left: 2px solid $sky;
+
+				h3 {
+					@include font-bold;
+					font-size: 1.6em;
+				}
+
+				.copyright {
+					display: block;
+				}
+			}
+
+			.footer-menu {
+				flex: 1;
+				flex-basis: 25%;
+				padding: 0;
+				padding-left: 3%;
+				border-left: 2px solid $red;
+
+				a {
+					color: $navy;
+				}
+			}
+		}
+	}
+
+	.copyright {
+		font-size: .9em;
+		color: rgba( $navy, .5 );
+	}
+
+	& > .copyright {
+		display: block;
+
+		@include respond-to( $bp-m ) {
+			display: none;
+		}
+	}
+}
+

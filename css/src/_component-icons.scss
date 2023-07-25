@@ -1,0 +1,80 @@
+
+
+.icons {
+    @include padding;
+    background: $sky;
+
+    @include respond-to( 450px ) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @include respond-to( $bp-l ) {
+        flex-wrap: nowrap;
+    }
+
+
+    a {
+        display: block;
+
+        &:hover {
+            text-decoration: none;
+            opacity: .95;
+        }
+
+        @include respond-to( 450px ) {
+            flex: 0 0 50%;
+            margin: 2%;
+        }
+
+        @include respond-to( $bp-m ) {
+            flex-basis: 33.3333%;
+        }
+
+        @include respond-to( $bp-l ) {
+            flex: 1;
+        }
+    }
+
+    .icon {
+        padding: 0;
+        text-align: center;
+        background: white;
+        border: 7px solid $navy;
+        border-radius: 10px;
+        padding: 30px 30px 100px 30px;
+        position: relative;
+
+        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: "Learn More";
+            padding: 20px;
+            background: $navy;
+            color: white;
+            font-size: 1.3em;
+            border-top: 7px solid $navy;
+            pointer-events: none;
+        }
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 160px;
+
+            img {
+                max-width: 120px;
+            }
+        }
+
+        h4 {
+            @include font-bold;
+            color: $navy;
+            font-size: 1.5em;
+        }
+    }
+}
+

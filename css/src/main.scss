@@ -1,0 +1,36 @@
+
+// set colors
+$navy: #1c2854;
+$red: #c20f2f;
+$sky: #8acaeb;
+$seafoam: #64beb7;
+$orange: #ec493c;
+$gold: #e1a664;
+$grey: #798a8d;
+$grey-light: #f2f6f6;
+$grey-dark: #3B4344;
+
+
+// breakpoints
+$bp-s: 600px;
+$bp-m: 768px;
+$bp-l: 1024px;
+$bp-xl: 1150px;
+$bp-xxl: 1350px;
+
+
+// import all the things
+@import "mixins", "fonts", "reset", "base", "grid", "form";
+
+// import layout components
+@import "header", "content", "sidebar", "footer";
+
+// import shortcode styles
+@import "button", "articles";
+
+// import the component styles
+@import "component-header", "component-slides", "component-content-area", "component-accordions", "component-image-text", "component-photos", "component-icons", "component-separator", "component-list", "component-agenda";
+
+// import lightbox styles
+@import "magnific";
+
